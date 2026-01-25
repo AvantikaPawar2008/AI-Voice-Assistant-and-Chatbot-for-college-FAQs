@@ -1,0 +1,252 @@
+{
+  "college": {
+    "name": "Pimpri Chinchwad College of Engineering",
+    "short_name": "PCCOE",
+    "location": {
+      "city": "Pune",
+      "state": "Maharashtra",
+      "area": "Akurdi",
+      "pincode": 411044
+    },
+    "established_year": 1999,
+    "affiliation": "Savitribai Phule Pune University",
+    "accreditation": ["NAAC", "NBA"]
+  },
+  "programs": {
+    "undergraduate": [
+      "Computer Engineering",
+      "Information Technology",
+      "Artificial Intelligence and Data Science",
+      "Electronics and Telecommunication Engineering",
+      "Mechanical Engineering",
+      "Civil Engineering"
+    ],
+    "postgraduate": [
+      "Computer Engineering",
+      "Electronics and Telecommunication Engineering",
+      "Mechanical Engineering"
+    ],
+    "doctoral": [
+      "PhD in selected engineering disciplines"
+    ]
+  },
+  "departments": [
+    {
+      "name": "Computer Engineering",
+      "courses": [
+        {
+          "course_name": "B.Tech Computer Engineering",
+          "duration_years": 4,
+          "intake": 240,
+          "fees_per_year": "176000(open category)"
+        }
+        
+      ],
+      "hod": "Dr. Mrs. S.D. Patil"
+    },
+    {
+      "name": "Mechanical Engineering",
+      "courses": [
+        {
+          "course_name": "B.Tech Mechanical Engineering",
+          "duration_years": 4,
+          "intake": 180,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod": "Dr. P.R.Kale"
+    },
+    {
+      "name": "Electronics & Telecommunication",
+      "courses": [
+        {
+          "course_name": "B.Tech E&TC Engineering",
+          "duration_years": 4,
+          "intake": 180,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod": "Dr. K.S.Kinage"
+    },
+  
+  
+  {
+    "name": "Information Technology",
+      "courses": [
+        {
+          "course_name": "B.Tech Information Technology",
+          "duration_years": 4,
+          "intake": 120,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod": "Dr. Mrs. J.V.Katti"
+    },
+
+    {
+      "name": "Computer Science and Engineering",
+      "courses":[
+        {
+          "course_name":"B.Tech Computer Science and Engineering (AI & ML)",
+          "duration_years": 4,
+          "intake": 120,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod":"Dr. Mrs.A.D. Thakare"
+    },
+
+    {
+      "name": "Civil Engineering",
+      "courses":[
+        {
+          "course_name":"B.Tech Civil Engineering",
+          "duration_years": 4,
+          "intake": 60,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod":"Dr. A.K. Gaikwad"
+    },
+
+     {
+      "name": "Computer Engineering(Regional Language)",
+      "courses":[
+        {
+          "course_name":"B.Tech Computer Engineering(Regional Language)",
+          "duration_years": 4,
+          "intake": 60,
+          "fees_per_year": "176000(open category)"
+        }
+      ],
+      "hod":"Dr.Mrs. R.Y. Patil"
+    }
+
+
+
+
+  ],
+    
+    
+
+  "admissions": {
+    "process": "CAP Round (State CET Cell), ACAP Round(spot round)",
+    "eligibility": {
+      "ug": "12th Science with PCM + Entrance Exam"
+    },
+    "entrance_exams": ["MHT-CET", "JEE Main"],
+    "important_dates": {
+      "form_start": " 28th July 2025",
+      "last_date": "11th September 2025"
+    }
+  },
+
+  "hostel": {
+    "boys_hostel": {
+      "capacity": "300 students",
+      "fees_per_year": "1,55,000"
+    },
+    "girls_hostel": {
+      "capacity": "150 students",
+      "fees_per_year": "1,45,000"
+    }
+  },
+
+  "facilities": {
+    "library": {
+      "books_count": "2069 (departmental)",
+      "digital_library": true
+    },
+    "sports": ["Football", "Cricket", "Basketball", "Gym"],
+    "laboratories": ["Computer Lab", "Mechanical Workshop", "Electronics Lab",
+     "Physics Lab", "Digital Electronics Lab", "Artificial intelligence Lab", 
+     "Chemistry Lab","Innovation Lab","PG Lab", "Auto Cad Lab", "Geology Lab", 
+     "Engineering Mechanics Lab","Testing of Material Lab","Survey Lab",
+     "3D Prinitng Lab","Drawing Hall", "Fluid Mechanics Lab"],
+    "canteen": true,
+    "transport": true,
+    "wifi": true
+  },
+
+  "events": [
+    {
+      "name": "Spectrum",
+      "type": "Technical Event",
+      "month": "December-January",
+      "description": "Annual technical festival"
+    },
+    {
+      "name": "Swartarang",
+      "type": "Cultural Event",
+      "month": "January-February",
+      "description": "Cultural celebration"
+    },
+    {
+      "name":"Kshitij",
+      "type": "R&D Event",
+      "month":"may",
+      "description": "To showcase innovations and startup ideas to industry experts"
+    }
+  ],
+
+  "contact": {
+    "phone":   8087174347,
+    "email": "info@pccoe.com",
+    "website": "https://www.pccoepune.com",
+    "address": "Akurdi, Pune, Maharashtra"
+  },
+  "placements": {
+    "top_recruiters": [
+      "TCS",
+      "Infosys",
+      "Capgemini",
+      "Accenture",
+      "Cognizant",
+      "Wipro",
+      "IBM",
+      "Persistent",
+      "Zensar",
+      "Tata Technologies"
+    ],
+    "average_package": "Moderate to Good",
+    "highest_package": "High for Computer and IT branches"
+  },
+"clubs":
+  [
+    {
+      "clubName": "Team Red Baron",
+      "Description": " We design, manufacture and test All-Terrain Vehicle and participate in National and International SAE Baja competitions and Innovate and build robust off-road vehicles and in that process, give the students a platform to develop and hone the skills required to sculpt their future."
+    },
+    {
+      "clubName": "Team Kratos Racing",
+      "Description":"Team Kratos Racing Electric represents the Formula Student initiative at Pimpri Chinchwad College of Engineering, consisting of 40 dedicated undergraduate students from diverse disciplines fostering a truly interdisciplinary collaboration."
+    },
+    {
+      "clubName":"Team Solarium",
+      "Description":"Team Solarium, a leading solar car motorsport team, has been driving innovation in sustainable mobility since 2016. With seven state-of-the-art solar cars, the team has excelled in national competitions and is now setting its sights on global challenges like the Bridgestone World Solar Challenge (BWSC). Committed to advancing clean energy solutions, Team Solarium also provides students with invaluable interdisciplinary learning and industry exposure, shaping the future of sustainable transportation."
+    },
+    {
+      "clubName":"Team Ambush",
+      "Description":"Team Ambush is a group of undergraduate students from diverse streams studying at Pimpri Chinchwad College of Engineering, Pune, striving to bring change in the agriculture domain. We aim to conceptualize, design, fabricate & test a “Automated Multi - Vegetable Transplanter”. We are team with an ideology and goal to “Innovate & Mechanize the field of Agriculture in India."
+    },
+    {
+      "clubName":"Team Automatons",
+      "Description":"Team Automatons, the robotics research and development team of Pimpri Chinchwad College of Engineering, Pune, India. Our team is run by undergraduate students coming from different disciplines of Engineering. Our team participates in International Robotics Competition ABU ROBOCON, ISRO Rover Challenge(IRoC-U), International Rover Challenge(IRC), apart from this we conduct various workshops for students to help them explore the field of robotics."
+    },
+    {
+      "clubName":"Team Maverick India",
+      "Description":" We design, innovate, fabricate and test fixed Wing UAVs. The team's objective is to allow students to transcend themselves and sharpen their skills in the aero domain. The team is enriching this learning experience by participating in a hands-on engineering challenge at the Aero Design Series at the national and international levels."
+    },
+    {
+      "clubName":"Team Anantam",
+      "Description":"Team Anantam Rocketry and Space Research (TARSR) is a collegiate team of 50+ interdisciplinary undergraduates dedicated to model rocketry and CanSat development.They are currently prototyping sustainable rocket airframes and motors using various materials while addressing problem statements from ISRO, IN-SPACe, and the Astronautical Society of India competitions. TARSR aims to represent PCCOE Pune; India in international competitions and collaborates with industry partners for research and development."
+    },
+    {
+      "clubName":"The Coding Club",
+      "Description":"The Coding Club at PCCoE is a dynamic and enthusiastic group of students dedicated to excelling in programming, cybersecurity, and open-source software development. The club actively engages in renowned competitions such as ICPC, GSoC, CTF, and IEEE Xtreme, creating an environment that encourages collaboration, continuous learning, and innovation. By providing a mix of mentorship, hands-on workshops, and practical competition experience, the club ensures that students gain the technical expertise and industry exposure required to succeed in today’s tech-driven world."
+    }
+  ]
+
+  
+
+}

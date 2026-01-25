@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI College Assistant - Space Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #000003;
+            --accent: #00f2fe;
+            --space-glow: rgba(0, 242, 254, 0.15);
+            --panel-bg: rgba(5, 5, 15, 0.9);
+        }
+
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* --- STARFIELD EFFECT --- */
+        #space-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+        }
+
+        /* --- VISUALIZER SECTION --- */
+        .visualizer-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nebula {
+            position: absolute;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--space-glow) 0%, transparent 70%);
+            filter: blur(40px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: drift 10s infinite alternate;
+        }
+
+        @keyframes drift {
+            from { transform: scale(1) translate(-10px, -10px); }
+            to { transform: scale(1.2) translate(10px, 10px); }
+        }
+
+        .mic-container {
+            position: relative;
+            width: 300px; height: 300px;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer;
+        }
+
+        .ring {
+            position: absolute;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .active-listening .ring {
+            animation: space-ripple 2s infinite ease-out;
+        }
+
+        @keyframes space-ripple {
+            0% { width: 100px; height: 100px; opacity: 1; border-width: 2px; }
+            100% { width: 450px; height: 450px; opacity: 0; border-width: 0px; }
+        }
+
+        .mic-core {
+            width: 110px; height: 110px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            z-index: 10;
+            box-shadow: 0 0 40px var(--space-glow);
+            transition: 0.3s;
+        }
+
+        .mic-core i { font-size: 35px; color: var(--accent); }
+
+        .active-listening .mic-core {
+            transform: scale(1.1);
+            background: var(--accent);
+        }
+        .active-listening .mic-core i { color: #000; }
+
+        /* --- CHAT PANEL --- */
+        .chat-section {
+            width: 450px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(25px);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex; flex-direction: column;
+            z-index: 2;
+        }
+
+        .panel-header { padding: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .panel-header h2 { margin: 0 0 15px 0; font-size: 18px; letter-spacing: 2px; color: var(--accent); }
+        
+        /* Updated Input Box with Send Button */
+        .input-box {
+            display: flex; 
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px; 
+            padding: 5px 10px 5px 15px; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s;
+        }
+
+        .input-box:focus-within { border-color: var(--accent); }
+
+        #text-input { 
+            flex: 1; 
+            background: none; 
+            border: none; 
+            color: white; 
+            outline: none; 
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        #send-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            padding: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+
+        #send-btn:hover { opacity: 1; transform: scale(1.1); }
+
+        #chat-log { flex: 1; overflow-y: auto; padding: 25px; display: flex; flex-direction: column; gap: 20px; }
+        .msg { max-width: 85%; padding: 14px 18px; border-radius: 15px; font-size: 14px; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } }
+        .user-msg { align-self: flex-end; background: var(--accent); color: #000; font-weight: 600; }
+        .bot-msg { align-self: flex-start; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); }
+
+        .status-msg { margin-top: 30px; font-size: 10px; letter-spacing: 5px; color: var(--accent); opacity: 0.7; }
+        /* --- SUGGESTIONS PANEL (LEFT) --- */
+        .suggestions-section {
+            width: 300px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(25px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            padding: 30px;
+        }
+
+        .suggestions-section h2 {
+            margin: 0 0 20px 0;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .suggestion-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 254, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .suggestion-card:hover {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: var(--accent);
+            transform: translateX(5px);
+            color: white;
+        }
+
+        .suggestion-card i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas id="space-canvas"></canvas>
+
+    <div class="suggestions-section">
+    <h2>SUGGESTIONS</h2>
+    
+    <div class="suggestion-group">
+        <h3><i class="fas fa-microchip"></i> Departments</h3>
+        <div class="suggestion-card" onclick="fillInput('Give Information about departments in College.')"> Department Help</div>
+        <div class="suggestion-card" onclick="fillInput('What are program offerings?')">Programs offered</div>
+    </div>
+
+    <div class="suggestion-group">
+        <h3><i class="fas fa-users"></i> Student Clubs</h3>
+
+        <div class="suggestion-card" onclick="fillInput('Tell me about team solarium club')">Team Solarium (Solar Car)</div>
+        <div class="suggestion-card" onclick="fillInput('What does team automatons club do?')">Team Automatons (Robotics)</div>
+        <div class="suggestion-card" onclick="fillInput('Tell me about the coding club')">The Coding Club</div>
+    </div>
+     <div class="suggestion-group">
+        <h3><i class="fas fa-rocket"></i> Live Events</h3>
+        <div class="suggestion-card" onclick="fillInput('What are the events that held in College?')">Upcoming Events</div>
+        <div class="suggestion-card" onclick="fillInput('What is the next cultural event?')">Cultural Night Info</div>
+    </div>
+    </div>
+   
+
+    
+    <div class="chat-section">
+        <div class="panel-header">
+            <h2>AI COLLEGE ASSISTANT</h2>
+            <form class="input-box" id="text-form">
+                <input type="text" id="text-input" placeholder="Type a message..." autocomplete="off">
+                <button type="submit" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+        <div id="chat-log">
+            <div class="msg bot-msg">Hello! I am your college assistant. How can I help?</div>
+        </div>
+    </div>
+
+    <div class="visualizer-section">
+        <div class="nebula"></div>
+        <div class="mic-container" id="mic-btn">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="mic-core">
+                <i class="fas fa-microphone"></i>
+            </div>
+        </div>
+        <div class="status-msg" id="status">INITIATE VOICE COMMAND</div>
+    </div>
+
+    
+
+    <script>
+        // --- STARFIELD EFFECT ---
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function initStars() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            for (let i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5,
+                    velocity: Math.random() * 0.2 + 0.05
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            stars.forEach(s => {
+                s.x -= s.velocity;
+                if (s.x < 0) s.x = canvas.width;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        initStars();
+        animateStars();
+        window.onresize = initStars;
+
+        // --- BOT LOGIC ---
+        const micBtn = document.getElementById('mic-btn');
+        const status = document.getElementById('status');
+        const chatLog = document.getElementById('chat-log');
+        const textInput = document.getElementById('text-input');
+
+        function addMessage(role, text) {
+            const div = document.createElement('div');
+            div.className = `msg ${role}-msg`;
+            div.innerText = text;
+            chatLog.appendChild(div);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        async function processRequest(query) {
+            if (!query.trim()) return;
+            addMessage('user', query);
+            status.innerText = "PROCESSING DATA...";
+            try {
+                const response = await fetch('/process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+                const data = await response.json();
+                addMessage('bot', data.response);
+                status.innerText = "TRANSMITTING...";
+                
+                // Text-to-Speech
+                const utterance = new SpeechSynthesisUtterance(data.response);
+                utterance.onend = () => status.innerText = "INITIATE VOICE COMMAND";
+                window.speechSynthesis.speak(utterance);
+                
+            } catch (e) { 
+                status.innerText = "LINK LOST"; 
+                addMessage('bot', "Connection error. Please try again.");
+            }
+        }
+
+        // Voice Recognition
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            micBtn.onclick = () => {
+                recognition.start();
+                micBtn.classList.add('active-listening');
+                status.innerText = "LISTENING...";
+            };
+            recognition.onresult = (e) => {
+                micBtn.classList.remove('active-listening');
+                processRequest(e.results[0][0].transcript);
+            };
+            recognition.onerror = () => micBtn.classList.remove('active-listening');
+        }
+
+        document.getElementById('text-form').onsubmit = (e) => {
+            e.preventDefault();
+            const val = textInput.value;
+            processRequest(val);
+            textInput.value = '';
+        };
+        function fillInput(text) {
+            textInput.value = text;
+            // Automatically trigger the processRequest
+            processRequest(text);
+            textInput.value = '';
+         }
+    </script>
+</body>
+</html>
