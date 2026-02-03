@@ -38,11 +38,11 @@
           "course_name": "B.Tech Computer Engineering",
           "duration_years": 4,
           "intake": 240,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year": "As per institute norms"
         }
         
       ],
-      "hod": "Dr. Mrs. S.D. Patil"
+      "hod": "Head of Department"
     },
     {
       "name": "Mechanical Engineering",
@@ -51,10 +51,10 @@
           "course_name": "B.Tech Mechanical Engineering",
           "duration_years": 4,
           "intake": 180,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year": "As per institute norms"
         }
       ],
-      "hod": "Dr. P.R.Kale"
+      "hod": "Head of Department"
     },
     {
       "name": "Electronics & Telecommunication",
@@ -63,10 +63,10 @@
           "course_name": "B.Tech E&TC Engineering",
           "duration_years": 4,
           "intake": 180,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year":"As per institute norms"
         }
       ],
-      "hod": "Dr. K.S.Kinage"
+      "hod": "Head of Department"
     },
   
   
@@ -77,10 +77,10 @@
           "course_name": "B.Tech Information Technology",
           "duration_years": 4,
           "intake": 120,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year":"As per institute norms"
         }
       ],
-      "hod": "Dr. Mrs. J.V.Katti"
+      "hod":  "Head of Department"
     },
 
     {
@@ -90,10 +90,10 @@
           "course_name":"B.Tech Computer Science and Engineering (AI & ML)",
           "duration_years": 4,
           "intake": 120,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year": "As per institute norms"
         }
       ],
-      "hod":"Dr. Mrs.A.D. Thakare"
+      "hod": "Head of Department"
     },
 
     {
@@ -103,10 +103,10 @@
           "course_name":"B.Tech Civil Engineering",
           "duration_years": 4,
           "intake": 60,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year": "As per institute norms"
         }
       ],
-      "hod":"Dr. A.K. Gaikwad"
+      "hod": "Head of Department"
     },
 
      {
@@ -116,10 +116,10 @@
           "course_name":"B.Tech Computer Engineering(Regional Language)",
           "duration_years": 4,
           "intake": 60,
-          "fees_per_year": "176000(open category)"
+          "fees_per_year": "As per institute norms"
         }
       ],
-      "hod":"Dr.Mrs. R.Y. Patil"
+      "hod": "Head of Department"
     }
 
 
@@ -135,10 +135,8 @@
       "ug": "12th Science with PCM + Entrance Exam"
     },
     "entrance_exams": ["MHT-CET", "JEE Main"],
-    "important_dates": {
-      "form_start": " 28th July 2025",
-      "last_date": "11th September 2025"
-    }
+   "important_dates": "Refer State CET Cell notifications"
+
   },
 
   "hostel": {
@@ -190,7 +188,7 @@
   ],
 
   "contact": {
-    "phone":   8087174347,
+    "phone":"Refer official website"
     "email": "info@pccoe.com",
     "website": "https://www.pccoepune.com",
     "address": "Akurdi, Pune, Maharashtra"
